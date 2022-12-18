@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regiser | Insane Gym</title>
+</head>
+<body style="text-align:center; font-family: sans-serif;">
+    <h2>Register as Manager - Insane Gym</h2>
+    <div class="container" style="border:1px solid rgba(0,0,0,0.25); border-radius: 4px; padding: 1em 2em; width: fit-content; margin:auto;">
+        <form action="POST" onsubmit="registerManager(event)">
+            <table>
+                <tr>
+                    <td><label for="name">Name</label></td>
+                    <td><input type="text" required autofocus name="name" id="name" placeholder="Full Name" autocapitalize="words"></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email</label></td>
+                    <td><input type="text" name="email" id="email" required placeholder="Email"></td>
+                </tr>
+                <tr>
+                    <td><label for="password">Password</label></td>
+                    <td><input type="password" name="password" id="password" required placeholder="Password"></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td style="padding-top: 1em; font-size: 0.85rem;">Already have an account? <a href="/manager/login">Login</a></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button style="margin-top: 1em;">Submit</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script src="js/register.js"></script>
+</body>
+</html>

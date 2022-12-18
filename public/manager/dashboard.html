@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manager Dashboard | Insane Gym</title>
+  <link rel="stylesheet" href="manager/css/dashboard.css">
+</head>
+<body>
+  <nav>
+    <h1>Insane Gym</h1>
+    <button>Logout</button>
+  </nav>
+
+  <main>
+    <section class="side-nav">
+      <div class="members">
+        <h3>Members</h3>
+        <ul class="side-nav--list">
+          <li class="side-nav--tabs" id="list-member-tab" onclick="setSelectedTab('list-member')">List All Members</li>
+          <li class="side-nav--tabs" id="add-member-tab" onclick="setSelectedTab('add-member')">Add New Member</li>
+        </ul>
+      </div>
+      <div class="class" style="margin-top: 2em;">
+        <h3>Gym Classes</h3>
+        <ul class="side-nav--list">
+          <li class="side-nav--tabs" id="list-class-tab" onclick="setSelectedTab('list-class')">List All Classes</li>
+          <li class="side-nav--tabs" id="add-class-tab" onclick="setSelectedTab('add-class')">Add New Class</li>
+        </ul>
+      </div>
+      <br>
+    </section>
+
+    <section class="content">
+      <div id="list-member">
+        <h1>List Members</h1>
+        <table class="content--table" id="members-table">
+        </table>
+      </div>
+
+      <div id="add-member">
+        <h1>Add Members</h1>
+        <form method="post" onsubmit="addNewMember(event)">
+          <table class="content-table">
+            <tr>
+              <td><label for="name">Name</label></td>
+              <td><input type="text" name="name" id="name" placeholder="Full Name" autofocus></td>
+            </tr>
+            <tr>
+              <td><label for="email">Email</label></td>
+              <td><input type="text" name="email" id="email" placeholder="Email"></td>
+            </tr>
+            <tr>
+              <td><label for="contact">Contact</label></td>
+              <td><input type="text" name="contact" id="contact" placeholder="+91-XXXXXXXXXX"></td>
+            </tr>
+            <tr>
+              <td><label for="membership_type">Membership Type</label></td>
+              <td>
+                <select name="membership_type" id="membership_type">
+                  <option value="1">Basic</option>
+                  <option value="2">Medium</option>
+                  <option value="3">Premium</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><label for="gym_class">Gym Class</label></td>
+              <td>
+                <select name="gym_class" id="gym_class">
+                  <option value='null'>--- Select ---</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" style="text-align: center; padding: 1em 0;"><button>Submit</button></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      
+      <div id="list-class">
+        <h1>List Classes</h1>
+        <table class="content--table" id="classes-table">
+        </table>
+      </div>
+
+      <div id="add-class">
+        <h1>Add Classes</h1>
+      </div>
+    </section>
+  </main>
+
+  <footer>Copyright &#169; Insane Gym, 2022-23</footer>
+  <script src="manager/js/dashboard.js"></script>
+</body>
+</html>
